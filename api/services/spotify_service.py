@@ -1,13 +1,11 @@
 import json
 import requests
 import base64
-
-# spotify_client_id = '0493107b40064a839fc4a359d9878cc8'
-# spotify_client_sercret = '80d6738510ab495ca4b8cc880f47eb34'
+from os import environ
 
 class Spotify:
-  def authorization_string(self, client_id, client_sercret):
-    auth_str = '{}:{}'.format(client_id, client_sercret)
+  def authorization_string(self):
+    auth_str = '{}:{}'.format(environ.get('SPOTIFY_CLIENT_ID'), environ.get('SPOTIFY_CLIENT_SECRET'))
     return base64.b64encode(auth_str.encode()).decode()
     
   def access_token(self, auth_string):
@@ -30,5 +28,4 @@ class Spotify:
       "market": "US",
       "limit": f"{limit}",
     }
-
     return requests.get('https://api.spotify.com/v1/search', params=params, headers=header)
