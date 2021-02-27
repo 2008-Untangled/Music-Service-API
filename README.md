@@ -25,6 +25,27 @@
   </p>
 </p>
 
+## Virtual Environment setup
+
+```bash
+# build a virtual environment to install your Python packages
+python3 -m venv ./venv
+
+# 'activate' the virtual environment for your project
+# do this every time you start a new terminal and enter your project folder
+source venv/bin/activate
+
+# install your Python packages
+pip3 install -r requirements.txt
+
+#set your Spotify API keys
+export SPOTIFY_CLIENT_ID=<your client id here>
+export SPOTIFY_CLIENT_SECRET=<your client secret here>
+```
+
+To shut off your virtual environment, run `deactivate` at a terminal where you
+have an active virtual environment.
+
 
 See [Open Issues](https://github.com/2008-Untangled/Music-Service-API/issues) or visit our [Project Board](https://github.com/orgs/2008-Untangled/projects/1) for a list of proposed features, known issues, and project extensions.
 
