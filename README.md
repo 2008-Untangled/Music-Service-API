@@ -11,7 +11,7 @@
   <h3 align="center">Music Service API</h3>
 
   <p align="center">
-    This is a microservice that was built to provide music information to the [Untangled](https://github.com/2008-Untangled) application.
+    This is a microservice that was built to provide music information to the Untangled application.
     <br />
     <a href="https://github.com/2008-Untangled"><strong>Explore the docs »</strong></a>
     <br />
