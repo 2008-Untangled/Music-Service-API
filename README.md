@@ -5,8 +5,10 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Build Status](https://travis-ci.com/travis-ci/travis-web.svg?branch=master)](https://travis-ci.com/github/2008-Untangled/Music-Service-API)
 
+<!--
+[![Build Status](https://travis-ci.com/travis-ci/travis-web.svg?branch=main)](https://travis-ci.com/github/2008-Untangled/Music-Service-API)
+-->
 
   <h3 align="center">Music Service API</h3>
 
@@ -65,19 +67,19 @@ Contributions are what make this community such an amazing and fun place to lear
 <!-- CONTACT -->
 ## Contact
 
-Bryce Jarrett &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/bryce-jarrett/) - [GitHub](https://github.com/brycemara)
+Bryce Jarrett &nbsp;&nbsp;&nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/bryce-jarrett/) - [GitHub](https://github.com/brycemara)
 
-Cameron Romo - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/cameron-romo-64b3a69b/) - [GitHub](https://github.com/cameronRomo)
+Cameron Romo &nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/cameron-romo-64b3a69b/) - [GitHub](https://github.com/cameronRomo)
 
-Joe Lopez &nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/joseph-lopez-100/) - [GitHub](https://github.com/Codo-Baggins)
+Joe Lopez &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/joseph-lopez-100/) - [GitHub](https://github.com/Codo-Baggins)
 
-Estelle Staffieri - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/estellestaffieri/) - [GitHub](https://github.com/Estaffieri)
+Estelle Staffieri &nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/estellestaffieri/) - [GitHub](https://github.com/Estaffieri)
 
 Grant Dempsey &nbsp;- [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/grant-dempsey-8a9a16169/) - [GitHub](https://github.com/GDemps)
 
-Eduardo Parra &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/eduardo--parra/) - [GitHub](https://github.com/helloeduardo)
+Eduardo Parra &nbsp;&nbsp;&nbsp; - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/eduardo--parra/) - [GitHub](https://github.com/helloeduardo)
 
-Jesse Mellinger &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/jesse-mellinger/) - [GitHub](https://github.com/JesseMellinger)
+Jesse Mellinger &nbsp;&nbsp;- [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/jesse-mellinger/) - [GitHub](https://github.com/JesseMellinger)
 
 Sean Steel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/sean-steel/) - [GitHub](https://github.com/s-steel)
 
