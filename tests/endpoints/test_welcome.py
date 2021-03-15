@@ -16,3 +16,7 @@ class WelcomeTest(unittest.TestCase):
   def test_welcome_page(self):
     response = self.client.get('/')
     self.assertEqual(200, response.status_code)
+
+  def test_404_response(self):
+    response = self.client.get('/233245345')
+    self.assertEqual(404, response.status_code)
