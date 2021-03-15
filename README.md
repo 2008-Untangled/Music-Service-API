@@ -48,6 +48,11 @@ export SPOTIFY_CLIENT_SECRET=<your client secret here>
 To shut off your virtual environment, run `deactivate` at a terminal where you
 have an active virtual environment.
 
+## Testing
+
+To run tests first activate your virtual environment with `source venv/bin/activate`<br>
+Then run `python3 -m pytest`
+
 
 See [Open Issues](https://github.com/2008-Untangled/Music-Service-API/issues) or visit our [Project Board](https://github.com/orgs/2008-Untangled/projects/1) for a list of proposed features, known issues, and project extensions.
 
