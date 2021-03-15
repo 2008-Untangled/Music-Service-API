@@ -1,8 +1,21 @@
 import json
 import unittest
 from api.resources.track_search import Track 
+from http import client
 
 class TrackSearchTest(unittest.TestCase):
+  # def setUp(self):
+  #       self.app = create_app('testing')
+  #       self.app_context = self.app.app_context()
+  #       self.app_context.push()
+  #       # db.create_all()
+        # self.client = self.app.test_client()
+
+  # def tearDown(self):
+  #     # db.session.remove()
+  #     # db_drop_everything(db)
+  #     self.app_context.pop()
+        
   def test_track_search(self):
       query = 'Yesterday'
       response = self.client.get(
