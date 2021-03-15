@@ -2,7 +2,7 @@ import json
 import unittest
 from api.resources.track_search import Track 
 
-class TrackSearchTest(unittest.Testcase):
+class TrackSearchTest(unittest.TestCase):
   def test_track_search(self):
       query = 'Yesterday'
       response = self.client.get(
