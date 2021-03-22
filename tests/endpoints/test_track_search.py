@@ -31,4 +31,16 @@ class TrackSearchTest(unittest.TestCase):
       self.assertEqual('The Beatles', results['artist_name'])
       self.assertEqual('Help! (Remastered)', results['album_name'])
       self.assertEqual('1965-08-06', results['album_release_date'])
+
+  def test_sad_path_track_search(self):
+      query = ''
+      response = self.client.get(
+      f'/api/v1/track?{query}'
+      )
+      self.assertEqual(422, response.status_code)
+
+      data = json.loads(response.data.decode('utf-8'))
+
+      self.assertEqual(422, data['error'])
+      self.assertEqual('Unprocessable Entity, please try another song title', data['message'])
     
