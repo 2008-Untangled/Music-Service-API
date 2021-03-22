@@ -38,3 +38,17 @@ class SpotifyServiceTest(unittest.TestCase):
       assert album_name == 'Help! (Remastered)'
       assert album_release_date == '1965-08-06'
 
+    def test_return_track_search(self):
+      service = Spotify()
+      token = service.access_token(service.authorization_string())
+      song_query = ''
+      limit = 1
+
+      response = service.track_search(token, song_query, limit)
+      response_data = json.loads(response.text)
+      info = response_data['error']
+
+      self.assertEqual(400, response.status_code)
+      self.assertEqual(400, info['status'])
+      self.assertEqual('No search query', info['message'])
+
