@@ -1,20 +1,19 @@
 import json
 import unittest
+
+from api import create_app
 from api.resources.track_search import Track 
 from http import client
 
 class TrackSearchTest(unittest.TestCase):
-  # def setUp(self):
-  #       self.app = create_app('testing')
-  #       self.app_context = self.app.app_context()
-  #       self.app_context.push()
-  #       # db.create_all()
-        # self.client = self.app.test_client()
+  def setUp(self):
+        self.app = create_app('testing')
+        self.app_context = self.app.app_context()
+        self.app_context.push()
+        self.client = self.app.test_client()
 
-  # def tearDown(self):
-  #     # db.session.remove()
-  #     # db_drop_everything(db)
-  #     self.app_context.pop()
+  def tearDown(self):
+      self.app_context.pop()
         
   def test_track_search(self):
       query = 'Yesterday'
@@ -24,22 +23,12 @@ class TrackSearchTest(unittest.TestCase):
       self.assertEqual(200, response.status_code)
 
       data = json.loads(response.data.decode('utf-8'))
-      assert_payload_field_type_value(self, data, 'success', bool, True)
       
       results = data['data']
-     
-      assert_payload_field_type_value(
-            self, results, 'song_name', str, 'Yesterday - Remastered 2009'
-        )
-      assert_payload_field_type_value(
-          self, results, 'song_url', str, 'https://open.spotify.com/track/3BQHpFgAp4l80e1XslIjNI'
-      )
-      assert_payload_field_type_value(
-          self, results, 'artist_name', int, 'The Beatles'
-      )
-      assert_payload_field_type_value(
-          self, results, 'album_name', int, 'Help! (Remastered)'
-      )
-      assert_payload_field_type_value(
-          self, results, 'album_release_date', int, '1965-08-06'
-      )
+
+      self.assertEqual('Yesterday - Remastered 2009', results['song'])
+      self.assertEqual('https://open.spotify.com/track/3BQHpFgAp4l80e1XslIjNI', results['url'])
+      self.assertEqual('The Beatles', results['artist_name'])
+      self.assertEqual('Help! (Remastered)', results['album_name'])
+      self.assertEqual('1965-08-06', results['album_release_date'])
+    
