@@ -12,9 +12,13 @@ class Track:
     response = service.track_search(token, song_query, limit)
     response_data = json.loads(response.text)
     if not response_data['tracks']['total']:
-      return {
-        'error': 422,
+      data = {
+        'status': 422,
         'message': 'Unprocessable Entity, please try another song title'
+        }
+      return {
+        'data': data,
+        'status': 422
       }
     else:
       response_data_song = response_data['tracks']['items'][0]
@@ -33,4 +37,7 @@ class Track:
           'album_release_date': album_release_date
         }
       }
-      return song_data
+      return {
+        'data': song_data,
+        'status': 200
+      }
