@@ -26,6 +26,6 @@ def create_app(config_name='default'):
       }), 422
     else:
       track_data = search.track_search(list(query_params.keys())[0])
-      return jsonify(track_data)
+      return jsonify(track_data['data']), track_data['status']
   
   return app

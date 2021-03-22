@@ -52,7 +52,7 @@ class TrackSearchTest(unittest.TestCase):
       self.assertEqual(422, response.status_code)
 
       data = json.loads(response.data.decode('utf-8'))
-      print(data)
-      self.assertEqual(422, data['error'])
+      
+      self.assertEqual(422, data['status'])
       self.assertEqual('Unprocessable Entity, please try another song title', data['message'])
     
