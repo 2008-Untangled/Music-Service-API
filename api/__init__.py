@@ -19,8 +19,13 @@ def create_app(config_name='default'):
   def api_filter():
     query_params = request.args
     search = Track()
-    track_data = search.track_search(list(query_params.keys())[0])
-    track_query = query_params.get('track')
-    return jsonify(track_data)
+    if not query_params:
+      return jsonify({
+        'error': 422,
+        'message': 'Unprocessable Entity, please try another song title'
+      }), 422
+    else:
+      track_data = search.track_search(list(query_params.keys())[0])
+      return jsonify(track_data)
   
   return app
