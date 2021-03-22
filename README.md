@@ -13,7 +13,7 @@
   <h3 align="center">Music Service API</h3>
 
   <p align="center">
-    This is a microservice that was built to provide music information to the Untangled application.
+    This is a microservice that was built to provide music information to the Untangled application.  When receiving a request for a song, this microservice consumes the <a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>, complies the relevant information, and returns that information in the response.
     <br />
     <a href="https://github.com/2008-Untangled"><strong>Explore the docs »</strong></a>
     <br />
@@ -26,6 +26,20 @@
     <a href="https://github.com/2008-Untangled/Music-Service-API/issues">Request Feature</a>
   </p>
 </p>
+
+### Table of Contents
+
+1. [About This Project](#about-this-project)
+1. [Virtual Environment setup](#virtual-environment-setup)
+1. [Endpoint](#endpoint)
+1. [Testing](#testing)
+1. [Contributing](#contributing)
+1. [Contact](#contact)
+
+## About This Project
+Visit [Untangled](https://github.com/2008-Untangled) to view all the repositories associated with this application.
+
+This microservice allows you to query a song name and receive a response that includes the song name, artist name, album name, album release date, and a url for that song on spotify.  It takes in the song name query, then consumes the [Spotify API](https://developer.spotify.com/documentation/web-api/) to get information about that song.  The relevant information for that song is then extracted and compiled, and then returned in the microservice response.   
 
 ## Virtual Environment setup
 
@@ -47,6 +61,52 @@ export SPOTIFY_CLIENT_SECRET=<your client secret here>
 
 To shut off your virtual environment, run `deactivate` at a terminal where you
 have an active virtual environment.
+
+## Endpoint
+
+### Search for a track:  `http://127.0.0.1:5000/api/v1/track?<track_name_here>`
+
+#### Example Valid Query:
+```
+GET http://127.0.0.1:5000/api/v1/track?yesterday
+```
+Response:
+```
+{
+  "data": {
+    "album_name": "Help! (Remastered)",
+    "album_release_date": "1965-08-06",
+    "artist_name": "The Beatles",
+    "song": "Yesterday - Remastered 2009",
+    "url": "https://open.spotify.com/track/3BQHpFgAp4l80e1XslIjNI"
+  }
+}
+```
+
+#### Example Empty Query:
+```
+GET http://127.0.0.1:5000/api/v1/track?
+```
+Response:
+```
+{
+  "error": 422,
+  "message": "Unprocessable Entity, please try another song title"
+}
+```
+
+#### Example Invalid Query:
+```
+GET http://127.0.0.1:5000/api/v1/track?asdfgasdfgasd
+```
+Response:
+```
+{
+  "message": "Unprocessable Entity, please try another song title",
+  "status": 422
+}
+```
+
 
 ## Testing
 
