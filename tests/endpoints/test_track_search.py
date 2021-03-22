@@ -43,4 +43,16 @@ class TrackSearchTest(unittest.TestCase):
 
       self.assertEqual(422, data['error'])
       self.assertEqual('Unprocessable Entity, please try another song title', data['message'])
+
+  def test_sad_path_jumbled_track_search(self):
+      query = 'asdffgsda'
+      response = self.client.get(
+      f'/api/v1/track?{query}'
+      )
+      self.assertEqual(422, response.status_code)
+
+      data = json.loads(response.data.decode('utf-8'))
+      print(data)
+      self.assertEqual(422, data['error'])
+      self.assertEqual('Unprocessable Entity, please try another song title', data['message'])
     
