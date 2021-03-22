@@ -11,20 +11,26 @@ class Track:
 
     response = service.track_search(token, song_query, limit)
     response_data = json.loads(response.text)
-    response_data_song = response_data['tracks']['items'][0]
-    song_name = response_data['tracks']['items'][0]['name']
-    song_url = response_data['tracks']['items'][0]['external_urls']['spotify']
-    artist_name = response_data['tracks']['items'][0]['artists'][0]['name']
-    album_name = response_data['tracks']['items'][0]['album']['name']
-    album_release_date = response_data['tracks']['items'][0]['album']['release_date']
-
-    song_data = {
-      'data': {
-        'song': song_name,
-        'url': song_url,
-        'artist_name': artist_name,
-        'album_name': album_name,
-        'album_release_date': album_release_date
+    if not response_data['tracks']['total']:
+      return {
+        'error': 422,
+        'message': 'Unprocessable Entity, please try another song title'
       }
-    }
-    return song_data
+    else:
+      response_data_song = response_data['tracks']['items'][0]
+      song_name = response_data['tracks']['items'][0]['name']
+      song_url = response_data['tracks']['items'][0]['external_urls']['spotify']
+      artist_name = response_data['tracks']['items'][0]['artists'][0]['name']
+      album_name = response_data['tracks']['items'][0]['album']['name']
+      album_release_date = response_data['tracks']['items'][0]['album']['release_date']
+
+      song_data = {
+        'data': {
+          'song': song_name,
+          'url': song_url,
+          'artist_name': artist_name,
+          'album_name': album_name,
+          'album_release_date': album_release_date
+        }
+      }
+      return song_data
