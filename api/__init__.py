@@ -1,6 +1,7 @@
 from flask_restful import Api
 from flask import Flask, jsonify, request
 from config import config
+from api.resources.track_search import Track 
 
 def create_app(config_name='default'):
   app = Flask(__name__)
@@ -17,7 +18,9 @@ def create_app(config_name='default'):
   @app.route('/api/v1/track', methods=['GET'])
   def api_filter():
     query_params = request.args
+    search = Track()
+    track_data = search.track_search(list(query_params.keys())[0])
     track_query = query_params.get('track')
-    return jsonify(query_params)
+    return jsonify(track_data)
   
   return app
